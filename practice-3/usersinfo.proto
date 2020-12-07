@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message UserRequest {
+    int32 user_id = 1;
+    string name = 2;
+    string password = 3;
+}
+
+
+service UserInfo {
+    rpc Username(UserRequest) returns (UserRequest) {}
+}
+
+message ProductRequest {
+    int32 product_id = 1;
+    string product_name = 2;
+    string product_cat = 3;
+    string product_des = 4;
+    int32 price = 5;
+
+}
+
+service ProductInfo {
+    rpc Products(ProductRequest) returns (ProductRequest) {}
+}
+
+

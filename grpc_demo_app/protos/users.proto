@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+service UsersInfo {
+ 
+  rpc GetUsers(UserRequest) returns (UserRequest) {}
+
+  rpc GetProducts(ProductRequest) returns (ProductRequest) {}
+
+  rpc GetVendors(VendorsRequest) returns(VendorsRequest){}
+
+  rpc GetPayments(PaymentsRequest) returns (PaymentsRequest) {}
+
+}
+
+message UserRequest {
+    int32 user_id = 1;
+    string name = 2;
+    string password = 3;
+}
+
+message ProductRequest {
+    int32 product_id = 1;
+    string product_name = 2;
+    string product_cat = 3;
+    string product_des = 4;
+    int32 price = 5;
+
+}
+
+message PaymentsRequest{
+    int32 payment_id = 1;
+    string payment_type = 2;
+    string payment_method = 3;
+}
+
+message VendorsRequest{
+    int32 vendor_id = 1;
+    string vendor_name = 2;
+    int32 phone = 3;
+    string email = 4;
+    string address = 5;
+}
